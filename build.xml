@@ -92,12 +92,6 @@
 We are now ready to execute our simple program with its dependency on commons-lang.
 Let's go!
 		</echo>
-        <java classname="example.Hello">
-            <classpath>
-                <path refid="lib.path.id" />
-                <path location="${build.dir}" />
-            </classpath>
-        </java>
     </target>
 
 	<!-- ================================= 
@@ -148,4 +142,14 @@ public class Hello {
 			description="--> clean the ivy cache">
 		<ivy:cleancache />
 	</target>
+
+    <target name="run" depends="go" description="run the program">
+        <java classname="example.Hello">
+            <classpath>
+                <path refid="lib.path.id" />
+                <path location="${build.dir}" />
+            </classpath>
+        </java>
+    </target>
+
 </project>
