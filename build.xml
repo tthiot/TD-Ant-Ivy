@@ -157,4 +157,9 @@ public class Hello {
         </java>
     </target>
 
+
+    <target name="report" depends="go" description="create a report">
+        <mkdir dir="report"/>
+        <ivy:report todir="report"/>
+    </target>
 </project>
